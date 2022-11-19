@@ -11,8 +11,10 @@ When the previous icon on the first image is clicked, it should show the last im
 
 
 
-## 🔗 Links
-[![Github page link](https://thobiy.github.io/Week6/)
+
+# Github page link 
+https://thobiy.github.io/Week6/
+
 
 
 
