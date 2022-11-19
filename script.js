@@ -1,49 +1,31 @@
-$(function() {
-    new Section({
-        images: '.one img',
-        btnPrev: '.one .buttons .prev',
-        btnNext: '.one .buttons .next',
-        auto: false
-    });
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none"; }
+    slides[slideIndex-1].style.display = "block"; 
+  
+}
+ const btns = document.querySelectorAll(".btn")
+ const slider= document.querySelector(".container")
+
+slider.addEventListener("mouseover", () => {
+  btns.forEach((btn) => {
+    btn.style.display = "block";
+  });
 });
 
-
-function Section(obj) {
-	this.images = $(obj.images);
-	this.auto = obj.auto;
-	this.btnPrev = obj.btnPrev;
-	this.btnNext = obj.btnNext;
-     this.rate = obj.rate || 1000;
-
-	var i = 0;
-     var section = this;
-
-    // The "Previous" button: to remove the class .shown, to show the previous image and to add the .shown class
-	this.prev = function () {
-		section.images.eq(i).removeClass('shown');
-		i--;
-
-		if (i < 0) {
-			i = section.images.length - 1;
-		}
-
-		section.images.eq(i).addClass('shown');
-	}
-
-    // The "Next" button: to remove the class .shown, to show the next image and to add the .shown class
-	this.next = function () {
-		section.images.eq(i).removeClass('shown');
-		i++;
-
-		if (i >= section.images.length) {
-			i = 0;
-		}
-
-		section.images.eq(i).addClass('shown');
-	}
-
-    // To add next and prev functions when clicking on the corresponding buttons
-    $(section.btnPrev).on('click', function(){ section.prev();});
-    $(section.btnNext).on('click', function(){ section.next();});
-
-};
+slider.addEventListener("mouseout", () => {
+  btns.forEach((btn) => {
+    btn.style.display = "none";
+  });
+});

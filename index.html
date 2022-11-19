@@ -4,28 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="script.js"></script>
+    <title>carousel Week6/7 Task</title>
+    <link href="style.css" rel="stylesheet"/>
+    <script src="script.js" defer></script> 
 </head>
 <body>
-    <div class="section one">
-
-        <div class="content">
-            <img src="image/image1.jpg" class="shown">
-            <img src="image/image2.jpg">
-            <img src="image/image3.jpg">
-            <img src="image/image4.jpg">
-            <img src="image/image5.jpg">
-            <img src="image/image6.jpg">
-            <!-- Prev/next buttons -->
-            <div class="buttons">
-                <div class="prev"></div>
-                <div class="next"></div>
-            </div>
+    <section aria-label="Landscape photos">
+        <div class="container">
+            <ul>
+                <li class="slide fade">
+                    <img src="image/image1.jpg">
+                </li>
+                <li class="slide fade">
+                    <img src="image/image2.jpg">
+                </li>
+                <li class="slide fade">
+                    <img src="image/image3.jpg">
+                </li>
+                <li class="slide fade">
+                    <img src="image/image4.jpg">
+                </li>
+                <li class="slide fade">
+                    <img src="image/image5.jpg">
+                </li>
+                <li class="slide fade">
+                    <img src="image/image6.jpg">
+                </li>
+            </ul>
+            <a class="prev btn" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next btn" onclick="plusSlides(1)">&#10095;</a>
         </div>
-    </div>
-
-    
+    </section>
 </body>
 </html>

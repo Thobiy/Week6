@@ -1,0 +1,14 @@
+const btns = document.querySelectorAll(".btn")
+ const slider= document.querySelector(".content")
+
+slider.addEventListener("mouseover", () => {
+  btns.forEach((btn) => {
+    btn.style.display = "block";
+  });
+});
+
+slider.addEventListener("mouseout", () => {
+  btns.forEach((btn) => {
+    btn.style.display = "none";
+  });
+});
